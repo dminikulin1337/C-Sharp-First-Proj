@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalcInt.cs" />
+    <Compile Include="ICalc.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="Director.cs" />
     <Compile Include="EducationLevel.cs" />

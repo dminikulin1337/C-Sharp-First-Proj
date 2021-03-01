@@ -33,7 +33,7 @@ namespace Company
                 //    Console.WriteLine(worker);
                 //}
 
-                object ob = 45; //boxing
+                /*object ob = 45; //boxing
                 int number = (int)ob; //unboxing
 
                 Point3D<int> point = new Point3D<int>(20, 40, 20);
@@ -63,6 +63,43 @@ namespace Company
                     anArray[i].Value = new Worker("Worker_" + i, "Surname", "Patronimic", DateTime.Now, Gender.Other, Nationality.Stateless, EducationLevel.None, 2000f, 0, false, "unknown");
                     Console.WriteLine(anArray[i]);
                 }
+
+                CalcInt calcInt = new CalcInt(15);
+                calcInt = calcInt.divide(new CalcInt(5));
+                Console.WriteLine(calcInt);*/
+
+                ArrayList employers = new ArrayList();
+                employers.Add(new Teacher());
+                employers.Add(new Worker());
+                employers.Add(new Manager());
+                employers.Add(new Director());
+
+                Console.WriteLine(employers.Count); //num of elements in list
+                Console.WriteLine(employers.Capacity); //разрядность
+
+                foreach (var item in employers)
+                {
+                    if (item is Teacher)
+                    {
+                        Console.WriteLine(((Teacher)item));
+                    }
+                    if (item is Worker)
+                    {
+                        Console.WriteLine(((Worker)item));
+                    }
+                    if (item is Manager)
+                    {
+                        Console.WriteLine(((Manager)item));
+                    }
+                    if (item is Director)
+                    {
+                        Console.WriteLine(((Director)item));
+                    }
+                }
+                List<Worker> workersList = new List<Worker>();
+                workersList.Add(new Worker());
+
+                //List<> - fulfill, print, sort, print sorting
             }
             catch (Exception e)
             {
