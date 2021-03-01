@@ -57,8 +57,10 @@
     <Compile Include="List_of_managers.cs" />
     <Compile Include="List_of_workers.cs" />
     <Compile Include="Manager.cs" />
+    <Compile Include="MyTwoParameters.cs" />
     <Compile Include="Nationality.cs" />
     <Compile Include="Point2D.cs" />
+    <Compile Include="Point3D.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Specialization.cs" />
