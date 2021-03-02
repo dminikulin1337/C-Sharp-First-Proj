@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Company
 {
@@ -145,6 +143,28 @@ namespace Company
             {
                 throw new ArgumentException();
             }
+        }
+    }
+    class WorkerSalaryAscComparerT : IComparer<Worker>
+    {
+        public int Compare(Worker x, Worker y)
+        {
+            if (x == null || y == null) return -1;
+            else if (x.Salary == null && y.Salary == null) return 0;
+            else if (x.Salary == null) return -1;
+            else if (y.Salary == null) return 1;
+            else return x.Salary.CompareTo(y.Salary);
+        }
+    }
+    class WorkerSalaryDescComparerT : IComparer<Worker>
+    {
+        public int Compare( Worker x,  Worker y)
+        {
+            if (x == null || y == null) return 1;
+            else if (x.Salary == null && y.Salary == null) return 0;
+            else if (x.Salary == null) return 1;
+            else if (y.Salary == null) return -1;
+            else return y.Salary.CompareTo(x.Salary);
         }
     }
     class WorkerAgeOfWorkAscComparer : IComparer

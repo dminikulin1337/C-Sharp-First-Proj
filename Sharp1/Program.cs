@@ -108,8 +108,8 @@ namespace Company
                 {
                     Console.WriteLine(workersList[i]);
                 }
-                Console.WriteLine();
-                workersList.Sort();
+                Console.WriteLine("\n<================ sorted ===================>\n");
+                workersList.Sort(new WorkerSalaryAscComparerT());
                 for (int i = 0; i < workersList.Count; i++)
                 {
                     Console.WriteLine(workersList[i]);
