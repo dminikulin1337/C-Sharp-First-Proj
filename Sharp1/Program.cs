@@ -68,37 +68,52 @@ namespace Company
                 calcInt = calcInt.divide(new CalcInt(5));
                 Console.WriteLine(calcInt);*/
 
-                ArrayList employers = new ArrayList();
-                employers.Add(new Teacher());
-                employers.Add(new Worker());
-                employers.Add(new Manager());
-                employers.Add(new Director());
+                //ArrayList employers = new ArrayList();
+                //employers.Add(new Teacher());
+                //employers.Add(new Worker());
+                //employers.Add(new Manager());
+                //employers.Add(new Director());
 
-                Console.WriteLine(employers.Count); //num of elements in list
-                Console.WriteLine(employers.Capacity); //разрядность
+                //Console.WriteLine(employers.Count); //num of elements in list
+                //Console.WriteLine(employers.Capacity); //разрядность
 
-                foreach (var item in employers)
-                {
-                    if (item is Teacher)
-                    {
-                        Console.WriteLine(((Teacher)item));
-                    }
-                    if (item is Worker)
-                    {
-                        Console.WriteLine(((Worker)item));
-                    }
-                    if (item is Manager)
-                    {
-                        Console.WriteLine(((Manager)item));
-                    }
-                    if (item is Director)
-                    {
-                        Console.WriteLine(((Director)item));
-                    }
-                }
+                //foreach (var item in employers)
+                //{
+                //    if (item is Teacher)
+                //    {
+                //        Console.WriteLine(((Teacher)item));
+                //    }
+                //    if (item is Worker)
+                //    {
+                //        Console.WriteLine(((Worker)item));
+                //    }
+                //    if (item is Manager)
+                //    {
+                //        Console.WriteLine(((Manager)item));
+                //    }
+                //    if (item is Director)
+                //    {
+                //        Console.WriteLine(((Director)item));
+                //    }
+                //}
                 List<Worker> workersList = new List<Worker>();
-                workersList.Add(new Worker());
-
+                int WLsize = 4;
+                Random random = new Random();
+                for (int i = 0; i < WLsize; i++)
+                {
+                    workersList.Add(new Worker("Worker_" + i, "tested", "tested",
+                        DateTime.Now, Gender.Other, Nationality.Stateless, EducationLevel.None, random.Next(20000, 25000), random.Next(1, 5), false, "testing"));
+                }
+                for (int i = 0; i < workersList.Count; i++)
+                {
+                    Console.WriteLine(workersList[i]);
+                }
+                Console.WriteLine();
+                workersList.Sort();
+                for (int i = 0; i < workersList.Count; i++)
+                {
+                    Console.WriteLine(workersList[i]);
+                }
                 //List<> - fulfill, print, sort, print sorting
             }
             catch (Exception e)
