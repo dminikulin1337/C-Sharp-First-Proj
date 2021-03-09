@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Company
 {
+    public delegate void ExamDelegate(string task);
     sealed class Teacher : Employee //запечатаный класс - запрещает насследовать от него
     {
         public Specialization specialty;
+        public event ExamDelegate examEvent; 
         public Teacher() : base()
         {
             specialty = Specialization.undefined;
@@ -23,6 +25,13 @@ namespace Company
         public override string ToString()
         {
             return base.ToString() + $"\n\tTeacher specialization: {specialty}; ";
+        }
+        public void Exam(string task) //exam trigger
+        {
+            if(examEvent != null)
+            {
+                examEvent(task);
+            }
         }
     }
 }

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Company
 {
-    class CalcInt : ICalc<CalcInt>
+    public delegate CalcInt CalcDelegate(CalcInt a);
+    public delegate T CalcDelegate<T>(T a, T b);
+    public class CalcInt : ICalc<CalcInt>
     {
         private int _number;
         public int Number

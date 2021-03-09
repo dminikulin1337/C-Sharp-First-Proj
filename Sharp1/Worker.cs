@@ -109,5 +109,17 @@ namespace Company
                 throw new Exception("Can't compare values");
             }
         }
+        public void ExamStart(string task)
+        {
+            Console.WriteLine($"Worker : { Name } got a task: {task}");
+        }
+        public void TakeSalary(Object sender, SalaryEventArgs args)
+        {
+            //Console.WriteLine(sender.ToString());
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"Name: {Name}");
+            Console.ResetColor();
+            Console.WriteLine($"Additional data: {args.Type}; Salary: {args.Salary};");
+        }
     }
 }
