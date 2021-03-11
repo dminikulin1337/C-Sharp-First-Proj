@@ -11,21 +11,17 @@ namespace Company
         private List_of_workers _workers;//worker list in current object
         public List_of_workers Workers { get { return _workers; } } //getting access to manager employees
 
-        public List_of_workers GetWorker(int index)
+        public EventHandler<TaskEventArgs> TaskList;
+
+        public void GiveTask(TaskEventArgs args)
         {
-            throw new NotImplementedException();
-        }
-        public List_of_workers GetWorker(string workDescription)
-        {
-            throw new NotImplementedException();
-        }
-        
-        public void ControlWork()
-        {
-            throw new NotImplementedException();
+            if (TaskList != null)
+            {
+                TaskList(this, args);
+            }
         }
 
-        public void Organize()
+        public void AcceptFinish(TaskEventArgs args)
         {
             throw new NotImplementedException();
         }
@@ -45,6 +41,16 @@ namespace Company
         {
             return base.ToString() + 
                 $"\n\tWorkers under control: {Workers.Count}";
+        }
+
+        public void ControlWork()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Organize()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -59,7 +59,7 @@ namespace Company
                 }
                 teacher.Exam($"Give $50 for room repair works");*/
 
-                BookKeeper bookKeeper = new BookKeeper();
+                /*BookKeeper bookKeeper = new BookKeeper();
                 bookKeeper.salaryEvent += workersList[0].TakeSalary;
                 bookKeeper.GiveSalary(new SalaryEventArgs { Type = "Salary", Salary = 5600f });
 
@@ -68,7 +68,14 @@ namespace Company
                     bookKeeper.salaryEvent += item.TakeSalary;
                 }
                 Console.WriteLine("Employees got their money");
-                bookKeeper.GiveSalary(new SalaryEventArgs { Type = "Avance", Salary = (float)Math.Floor(random.NextDouble() * 1000) });
+                bookKeeper.GiveSalary(new SalaryEventArgs { Type = "Avance", Salary = (float)Math.Floor(random.NextDouble() * 1000) });*/
+
+                Worker unknown = new Worker();
+                Console.WriteLine(unknown);
+                Manager manager = new Manager();
+                manager.TaskList += unknown.AcceptTask;
+                manager.GiveTask(new TaskEventArgs { Description = "Посчитать деньги для зарплаты твоих колег; протрезвить бухгалтера", 
+                    Executor = unknown.Surname + " " + unknown.Name });
             }
             catch (Exception e)
             {
@@ -76,7 +83,6 @@ namespace Company
                 Console.WriteLine("This is an error: ");
                 Console.WriteLine(e.Message);
                 Console.ResetColor();
-                Console.ReadKey();
             }
         }
     }

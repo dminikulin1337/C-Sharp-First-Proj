@@ -121,5 +121,16 @@ namespace Company
             Console.ResetColor();
             Console.WriteLine($"Additional data: {args.Type}; Salary: {args.Salary};");
         }
+        public void AcceptTask(Object sender, TaskEventArgs args)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Name: {Name}");
+            Console.ResetColor();
+            Console.WriteLine($"Task description: {args.Description};\nExecutor: {args.Executor};\n");
+        }
+        public void FinishTask(Object e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
